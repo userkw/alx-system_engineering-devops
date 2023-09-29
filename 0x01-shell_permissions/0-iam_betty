@@ -1,4 +1,2 @@
 #!/bin/bash
-
-# Switch the current user to "betty"
 su betty
