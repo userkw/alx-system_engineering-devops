@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod a+x u-x hello
+[ -e "hello" ] && chmod ugo+x hello
