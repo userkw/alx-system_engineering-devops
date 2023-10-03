@@ -1,2 +1,30 @@
 #!/bin/bash
-compgen -A variable | cat && compgen -A function | cat
+
+# Function to list local variables
+list_local_variables() {
+    local var_name
+    for var_name in $(set | grep "^[A-Za-z_][A-Za-z0-9_]*=" | cut -d= -f1); do
+        echo "Local Variable: $var_name"
+    done
+}
+
+# Function to list environment variables
+list_environment_variables() {
+    local var_name
+    for var_name in $(env | cut -d= -f1); do
+        echo "Environment Variable: $var_name"
+    done
+}
+
+# Function to list functions
+list_functions() {
+    local func_name
+    for func_name in $(declare -F | cut -d" " -f3); do
+        echo "Function: $func_name"
+    done
+}
+
+# Call the functions to list variables and functions
+list_local_variables
+list_environment_variables
+list_functions
