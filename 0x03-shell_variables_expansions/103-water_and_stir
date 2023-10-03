@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "ibase=13; ${WATER} + ${STIR}" | bc | tr '0123456789ABC' 'gtaio luSnemf'
