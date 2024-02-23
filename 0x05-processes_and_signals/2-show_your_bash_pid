@@ -1,1 +1,4 @@
+#!/usr/bin/env bash
+#Displays current running processes
 
+ps -faux | grep "bash"
